@@ -6,7 +6,7 @@ export default defineConfig({
   watchForFileChanges: false,
   trashAssetsBeforeRuns: true,
   e2e: {
-    baseUrl: 'http://localhost:3003/',
+    baseUrl: 'http://staging.uncommongood.io/business/app/',
     setupNodeEvents(on, config) {
       getCompareSnapshotsPlugin(on, config);
       return require('./cypress/plugins/index.js') (on, config);
