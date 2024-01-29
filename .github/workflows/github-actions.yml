@@ -18,5 +18,12 @@ jobs:
         run: yarn install
       - name: Run E2E tests
         run: yarn cy:run
+        env:
+          CYPRESS_ADMIN_PASS: ${{secrets.CYPRESS_ADMIN_PASS}}
+          CYPRESS_ADMIN_USER: ${{secrets.CYPRESS_ADMIN_USER}}
+          CYPRESS_ALWAYS_GENERATE_DIFF: ${{secrets.CYPRESS_ALWAYS_GENERATE_DIFF}}
+          CYPRESS_USER2_PASS: ${{secrets.CYPRESS_USER2_PASS}}
+          CYPRESS_USER2_USER: ${{secrets.CYPRESS_USER2_USER}}
+          CYPRESS_VISUAL_ENV: ${{secrets.CYPRESS_VISUAL_ENV}}
 
 
