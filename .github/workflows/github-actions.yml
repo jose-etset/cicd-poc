@@ -5,6 +5,7 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: [ubuntu-20.04]
+    environment: staging
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
