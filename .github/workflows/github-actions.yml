@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   cypress-run:
+    environment: staging
     runs-on: [ubuntu-20.04]
     steps:
       - name: Check out repository code
