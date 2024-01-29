@@ -9,7 +9,7 @@
     "cypress": "npx cypress open",
     "cy:cleanReports": "npx rimraf cypress/test-results/* || true && npx rimraf cypress/cucumber-json/* || true && npx rimraf cypress/videos/* || true && npx rimraf cypress/screenshots/* && npx rimraf cypress/snapshots/*",
     "cy:report": "node ./cypress/cucumber-html-report.js",
-    "cy:xmlReport": "npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.Json",
+    "cy:xmlReport": "npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
     "cy:gui": "npx cypress open --browser chrome",
     "cy:run": "npm run cy:xmlReport --headless --browser chrome",
     "test:e2e": "start-server-and-test serve http://localhost:3003 cy:run",
