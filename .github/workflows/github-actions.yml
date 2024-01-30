@@ -19,7 +19,6 @@ jobs:
       - name: Run E2E tests
         run: |
             yarn cy:run
-            yarn cy:report
         env:
           CYPRESS_ADMIN_PASS: ${{secrets.CYPRESS_ADMIN_PASS}}
           CYPRESS_ADMIN_USER: ${{secrets.CYPRESS_ADMIN_USER}}
@@ -27,6 +26,9 @@ jobs:
           CYPRESS_USER2_PASS: ${{secrets.CYPRESS_USER2_PASS}}
           CYPRESS_USER2_USER: ${{secrets.CYPRESS_USER2_USER}}
           CYPRESS_VISUAL_ENV: ${{secrets.CYPRESS_VISUAL_ENV}}
+      - name: Generate reports
+        run: |
+            yarn cy:report
       - name: Archive test report
         uses: actions/upload-artifact@v4
         with:
