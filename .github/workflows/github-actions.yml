@@ -25,5 +25,9 @@ jobs:
           CYPRESS_USER2_PASS: ${{secrets.CYPRESS_USER2_PASS}}
           CYPRESS_USER2_USER: ${{secrets.CYPRESS_USER2_USER}}
           CYPRESS_VISUAL_ENV: ${{secrets.CYPRESS_VISUAL_ENV}}
-
+      - name: Archive test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: testrun-report
+          path: cypress/test-results/html/
 
