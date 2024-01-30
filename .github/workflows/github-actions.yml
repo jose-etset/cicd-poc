@@ -19,7 +19,7 @@ jobs:
       - name: Run E2E tests
         run: |
             yarn cy:run
-            cy:report
+            yarn cy:report
         env:
           CYPRESS_ADMIN_PASS: ${{secrets.CYPRESS_ADMIN_PASS}}
           CYPRESS_ADMIN_USER: ${{secrets.CYPRESS_ADMIN_USER}}
