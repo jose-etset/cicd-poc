@@ -1,0 +1,36 @@
+name: End to End tests
+
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: [ubuntu-20.04]
+    environment: staging
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: yarn install
+      - name: Run E2E tests
+        run: |
+            yarn cy:run
+        env:
+          CYPRESS_ADMIN_PASS: ${{secrets.CYPRESS_ADMIN_PASS}}
+          CYPRESS_ADMIN_USER: ${{secrets.CYPRESS_ADMIN_USER}}
+          CYPRESS_ALWAYS_GENERATE_DIFF: ${{secrets.CYPRESS_ALWAYS_GENERATE_DIFF}}
+          CYPRESS_USER2_PASS: ${{secrets.CYPRESS_USER2_PASS}}
+          CYPRESS_USER2_USER: ${{secrets.CYPRESS_USER2_USER}}
+          CYPRESS_VISUAL_ENV: ${{secrets.CYPRESS_VISUAL_ENV}}
+      - name: Generate reports
+        run: |
+            yarn cy:report
+      - name: Archive test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: testrun-report
+          path: cypress/test-results/html/
