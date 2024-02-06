@@ -11,7 +11,7 @@
     "cy:report": "node ./cypress/cucumber-html-report.js",
     "cy:xmlReport": "npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
     "cy:gui": "npx cypress open --browser chrome",
-    "cy:run": "npm run cy:xmlReport --headless --browser chrome",
+    "cy:run": "npx cypress run --headless --browser chrome",
     "test:e2e": "start-server-and-test serve http://localhost:3003 cy:run",
     "test:unit": "vue-cli-service test:unit"
   },
