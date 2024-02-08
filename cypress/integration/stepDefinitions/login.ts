@@ -18,7 +18,7 @@ When("navigates to {string} panel", (endpoint) => {
   loginPage.goToWebPage(endpoint)
 });
 
-Then("user is {string} logged into OnlineAdaptive", (loginStatus) => {
+Then("user is {string} logged into Uncommongood", (loginStatus) => {
   loginPage.validateSuccessfulLogin(loginStatus)
 });
 
