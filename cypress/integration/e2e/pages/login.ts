@@ -35,7 +35,7 @@ class Login extends BasePage {
         this.enterPassword('testpass123');
         break; 
       } 
-      case 'user2': { 
+      case 'user': { 
         this.enterUsername(Cypress.env('USER_USER'));
         this.enterPassword(Cypress.env('USER_PASS'));
         break; 
