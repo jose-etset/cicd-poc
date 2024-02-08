@@ -5,12 +5,12 @@ Feature: User Login
 
     Scenario Outline: Users can login to Uncommongood.
         Given user logs in as <credentials>
-        Then user is <loginStatus> logged into OnlineAdaptive
+        Then user is <loginStatus> logged into Uncommongood
         Examples:
             | credentials | loginStatus      |
-            | 'user2'     | 'successfully'   |
+            | 'user'     | 'successfully'   |
             | 'invalid'   | 'unsuccessfully' |
-@test
+
      Scenario: Admins can login to Uncommongood
         Given user logs in as "admin"
         Then project select screen is displayed
