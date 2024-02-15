@@ -31,6 +31,17 @@ $ yarn test:unit
 ```
 $ yarn cypress
 ```
+
+### Run tests based on tags (eg: @test)
+```
+npx cypress-tags run -e TAGS='@test'
+```
+
+### Ignore tests based on tags (eg: @ignore)
+```
+npx cypress-tags run -e TAGS='not @ignore'
+```
+
 # General guidelines
 
 ### Do help remove eslint warnings
