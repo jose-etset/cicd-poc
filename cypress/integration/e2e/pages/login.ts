@@ -70,7 +70,7 @@ class Login extends BasePage {
   }
 
   /**
-   * this function validates the components for shall login page
+   * this function validates the components for the login page
    */
   validateComponents() {
     this.getUGLogo().should('be.visible')

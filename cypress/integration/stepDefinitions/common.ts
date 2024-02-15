@@ -1,5 +1,6 @@
 import { Given, When, Then} from 'cypress-cucumber-preprocessor/steps'
 import { afterEach, beforeEach } from 'mocha';
+import sideNav from '../e2e/pages/sideNav';
 
 // Hooks
 beforeEach(() => {
@@ -29,4 +30,8 @@ Then('{string} is displayed', (text) => {
 
 Then('{string} is not displayed', (text) => {
   cy.contains(text).should('not.exist')
+})
+
+Then ('side navigation components are displayed', () => {
+  sideNav.validateComponents()
 })
