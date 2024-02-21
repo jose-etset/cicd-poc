@@ -43,8 +43,8 @@ class Dashboard extends BasePage {
     this.getSectionSubtitle().eq(0).should('have.text', "analytics")
     this.getInformationCard().should('have.length', 3)
     this.getInformationCard().eq(0).invoke('text').should('contain', "Contact Growth")
-    this.getInformationCard().eq(1).invoke('text').should('contain', "Recent Invoices")
-    this.getInformationCard().eq(2).invoke('text').should('contain', "Total Invoices")
+    this.getInformationCard().eq(1).invoke('text').should('contain', "Recent Payments")
+    this.getInformationCard().eq(2).invoke('text').should('contain', "Total Payments")
     // Notifications
     this.getSectionSubtitle().eq(1).should('contain', "notifications")
     this.getNotificationCount().should('be.visible')
